@@ -13,19 +13,23 @@ def find_mismatch(text):
     for i, next in enumerate(text):
         if next in "([{":
           opening_brackets_stack.append(Bracket(next,i+1))
+        #   print(opening_brackets_stack)
         pass
 
         if next in ")]}":
-            if (len(opening_brackets_stack)==0 or not(are_matching(opening_brackets_stack[-1],next))):
+            if (len(opening_brackets_stack)==0 or not are_matching(opening_brackets_stack[-1],next)):
                 return i+1
-            pass
-        opening_brackets_stack.pop();
+            opening_brackets_stack.pop()
+        pass
+    if len(opening_brackets_stack)==0: return 0
+    return len(opening_brackets_stack)
+        
 
 
 def main():
     text = input()
     mismatch = find_mismatch(text)
-    if mismatch:
+    if mismatch==0:
         print("Success")
     else:
         print(mismatch)
