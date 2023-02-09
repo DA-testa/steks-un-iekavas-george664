@@ -32,7 +32,7 @@ def main():
     if mismatch==0:
         print("Success")
     else:
-        print(int(mismatch))
+        print(mismatch)
 
 if __name__ == "__main__":
     main()
