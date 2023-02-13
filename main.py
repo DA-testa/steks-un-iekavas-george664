@@ -28,7 +28,8 @@ def find_mismatch(text):
 
 def main():
     text = input()
-    mismatch = find_mismatch(text[5:])
+    text2=text[5:]
+    mismatch = find_mismatch(text2)
     if mismatch==0:
         print("Success")
     else:
