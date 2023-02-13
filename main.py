@@ -27,7 +27,7 @@ def find_mismatch(text):
 
 
 def main():
-    text = input()
+    text = input("I\r\n")
     mismatch = find_mismatch(text)
     if mismatch==0:
         print("Success")
