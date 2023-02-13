@@ -28,7 +28,7 @@ def find_mismatch(text):
 
 def main():
     text = input()
-    print(len(text))
+    print(text)
     mismatch = find_mismatch(text.replace(text[:5],""))
     if mismatch==0:
         print("Success")
