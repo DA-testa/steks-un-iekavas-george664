@@ -17,9 +17,9 @@ def find_mismatch(text):
 
         if next in ")]}":
             if (len(opening_brackets_stack)==0):
-                return i+1
+                return i-4
             elif not are_matching(opening_brackets_stack[-1].char,next):
-                return i+1
+                return i-4
             opening_brackets_stack.pop()
 
     return len(opening_brackets_stack)
@@ -28,7 +28,7 @@ def find_mismatch(text):
 
 def main():
     text = input()
-    mismatch = find_mismatch(text.replace(text[:5],""))
+    mismatch = find_mismatch(text)
     if mismatch==0:
         print("Success")
     else:
